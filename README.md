@@ -1,16 +1,115 @@
-# Vue 3 + Typescript + Vite
+# RDG 随机数据生成小工具
+工作中经常需要用到一些随机数据,以excel文件的方式导入到系统中,但是自己填数据是在太麻烦了,于是就用node生成,依旧太麻烦了,于是又了这个小工具,通过mockjs来生成数据,并且写成excel文件
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![大概就是这样的](http://assets.processon.com/chart_image/624865d67d9c080724769f12.png)  
 
-## Recommended IDE Setup
+# 功能列表
+[X] 设置文件名称
+[X] 设置数据量
+[X] 字段添加
+[X] 设置字段类型
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
-
-1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+```js
+export const SCHEMA_ITEM_TYPES = [
+  {
+    name: '整数',
+    type: 'integer',
+    children: [
+      {
+        name: '随机数',
+        type: 'randomInteger',
+      },
+    ],
+  },
+  {
+    name: '浮点数',
+    type: 'float',
+  },
+  {
+    name: '布尔值',
+    type: 'boolean',
+  },
+  // {
+  //   name: '经纬度',
+  //   type: 'longlat',
+  //   children: [
+  //     {
+  //       name: '经度',
+  //       type: 'longitude',
+  //     },
+  //     {
+  //       name: '纬度',
+  //       type: 'latitude',
+  //     },
+  //   ],
+  // },
+  {
+    name: '字符串',
+    type: 'string',
+    children: [
+      {
+        name: 'Email',
+        type: 'email',
+      },
+      {
+        name: 'GUID',
+        type: 'guid',
+      },
+      {
+        name: 'URL',
+        type: 'url',
+      },
+      {
+        name: '英文名',
+        type: 'englishName',
+      },
+      {
+        name: '中文名',
+        type: 'chineseName',
+      },
+      {
+        name: '地名',
+        type: 'location',
+      },
+      {
+        name: '随机字符串',
+        type: 'randomString',
+      },
+      {
+        name: '随机列表取值',
+        type: 'randomPick',
+      },
+    ],
+  },
+  {
+    name: '时间日期',
+    type: 'datetime',
+    children: [
+      {
+        name: '日期',
+        type: 'date',
+      },
+      {
+        name: '时间',
+        type: 'time',
+      },
+      {
+        name: '日期时间',
+        type: 'dateTime',
+      },
+    ],
+  },
+  // {
+  //   name: '占位图',
+  //   type: 'holderImage',
+  // },
+  {
+    name: '颜色',
+    type: 'color',
+  },
+];
+```
+# 后续功能
+1. 为每个字段添加配置项
+2. 添加经纬度类型字段
+3. 添加图片类型字段
