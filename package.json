@@ -1,0 +1,40 @@
+{
+  "name": "rdg",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
+    "prettier": "prettier --write ."
+  },
+  "dependencies": {
+    "@arco-design/web-vue": "^2.22.1",
+    "exceljs": "^4.3.0",
+    "file-saver": "^2.0.5",
+    "lodash": "^4.17.21",
+    "mockjs": "^1.1.0",
+    "normalize.css": "^8.0.1",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5",
+    "@types/lodash": "^4.14.181",
+    "@types/mockjs": "^1.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "@vitejs/plugin-vue": "^2.3.0",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "less": "^4.1.2",
+    "prettier": "^2.6.2",
+    "typescript": "^4.5.4",
+    "unplugin-vue-components": "^0.18.5",
+    "vite": "^2.9.0",
+    "vite-svg-loader": "^3.2.0",
+    "vue-tsc": "^0.29.8"
+  }
+}
