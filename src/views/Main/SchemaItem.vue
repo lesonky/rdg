@@ -36,6 +36,7 @@ const emit = defineEmits<{
 }>();
 
 const localConfig = reactive<SchemaConfig>({
+  _id: props.modelValue._id,
   name: props.modelValue.name,
   type: props.modelValue.type,
   config: props.modelValue.config,
